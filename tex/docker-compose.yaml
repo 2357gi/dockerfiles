@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  tex:
+    image: paperist/alpine-texlive-ja
+    volumes:
+      - ./:/workdir
+    command: latexmk -pvc main.tex
+
+
+  hosting:
+    build: ./hosting/
+    volumes:
+      - ./output:/root/public/output
+    ports:
+      - "8080:80"
+
+

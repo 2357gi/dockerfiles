@@ -1,0 +1,50 @@
+\documentclass[uplatex,b5j]{jsarticle} % uplatexオプションを入れる
+%\documentclass[b5j]{ujarticle}        % jarticle系にしたい場合はこっち
+\usepackage[scale=.8]{geometry}      % ページレイアウトを変更してみる
+\usepackage[T1]{fontenc}             % T1エンコーディングにしてみる
+\usepackage{txfonts}                 % 欧文フォントを変えてみる
+\usepackage{plext}                   % pLaTeX付属の縦書き支援パッケージ
+\usepackage{okumacro}                % jsclassesに同梱のパッケージ
+\begin{document}
+\title{とにかくup{\LaTeX}を使ってみる}
+\author{コピペ太郎}
+\西暦\maketitle                      % 漢字のマクロ名もOK
+
+\section{日本語と数式}
+\textbf{ゼータ関数}（zeta function）というのは
+\begin{equation}                     % 数式中の漢字もOK
+\zeta(s) \stackrel{定義}{=} \sum_{n=1}^\infty \frac{1}{n^s}
+= \prod_{p\colon 素数}\frac{1}{1-p^{-s}}
+\end{equation}
+とかいう奴のこと．
+
+\section{縦書き}
+\setlength{\fboxsep}{.5zw}
+縦書きの例は
+\fbox{\parbox<t>{12zw}{%
+  \setlength{\parindent}{1zw}
+  {\TeX}（テック，テフ）はStanford大学のKnuth教授に
+  よって開発された組版システムである．
+  {p\TeX}は\株 アスキーが{\TeX}を日本語対応
+  （縦書きを含む）にしたものである．
+  \par\bigskip
+  このように\bou{縦書き}についても{p\TeX}と
+  全く同様に文書を作成できます．
+  \par\bigskip
+  平成\rensuji{20}年\rensuji{4}月\rensuji{1}日
+  \par\medskip
+  平成\kanji20年\kanji4月\kanji1日
+}}%
+こんなの．
+
+\section{okumacroで遊んでみる}
+\ruby{組}{くみ}\ruby{版}{はん}，\ruby{等}{とう}\ruby{幅}{はば}，
+\keytop{Ctrl}+\keytop{A} \keytop{Del}
+\keytop{Ctrl}+\keytop{S} \return，
+\MARU{1}\MARU{2}\MARU{3}
+\par\bigskip
+\begin{shadebox}
+\挨拶 それでは．敬具
+\end{shadebox}
+
+\end{document}
