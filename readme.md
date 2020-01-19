@@ -1,4 +1,4 @@
 # Dockerfiles
-Dockerfile置き場
+:package:
+Dockerfile置き場  
 作ったら置く。
-
